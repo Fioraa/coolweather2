@@ -3,7 +3,7 @@
     <version value="1" />
     <list>
         <mapping class="com.example.gongtao2.coolweather2.db.Province" />
-        <mapping class="com.example.gongtao2.coolweather2.coolweather2.db.City" />
-        <mapping class="com.example.gongtao2.coolweather2.coolweather2.db.County" />
+        <mapping class="com.example.gongtao2.coolweather2.db.City" />
+        <mapping class="com.example.gongtao2.coolweather2.db.County" />
     </list>
 </litepal>
