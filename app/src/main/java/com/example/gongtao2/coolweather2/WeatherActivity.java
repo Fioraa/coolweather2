@@ -1,5 +1,6 @@
 package com.example.gongtao2.coolweather2;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -9,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +23,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.gongtao2.coolweather2.gson.Forecast;
 import com.example.gongtao2.coolweather2.gson.Weather;
+import com.example.gongtao2.coolweather2.service.AutoUpdateService;
 import com.example.gongtao2.coolweather2.util.HttpUtil;
 import com.example.gongtao2.coolweather2.util.Utilty;
 
@@ -87,7 +90,9 @@ public class WeatherActivity extends AppCompatActivity {
             weatherLayout.setVisibility(View.VISIBLE);
             requestWeather(weatherId);
         }
-
+        Log.d("准备启动服务：", "启动服务");
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
         navButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
